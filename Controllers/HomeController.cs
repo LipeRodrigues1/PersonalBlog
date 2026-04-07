@@ -1,14 +1,22 @@
+using PersonalBlog;
+using PersonalBlog.Service;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PersonalBlog.Models;
-
 namespace PersonalBlog.Controllers;
 
 public class HomeController : Controller
 {
+    private readonly ArticleService _articleService;
+    public HomeController(ArticleService articleService)
+    {
+        _articleService = articleService;
+    }
+
     public IActionResult Index()
     {
-        return View();
+        var articles = _articleService.GetArticles();
+        return View(articles);
     }
 
     public IActionResult Privacy()

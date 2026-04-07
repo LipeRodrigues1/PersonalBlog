@@ -1,5 +1,6 @@
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\bin\Debug\net10.0\appsettings.json
+C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\bin\Debug\net10.0\Data\Articles.json
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\bin\Debug\net10.0\PersonalBlog.staticwebassets.runtime.json
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\bin\Debug\net10.0\PersonalBlog.staticwebassets.endpoints.json
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\bin\Debug\net10.0\PersonalBlog.exe
@@ -15,6 +16,7 @@ C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\obj\Debug\net10.0\Persona
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\obj\Debug\net10.0\PersonalBlog.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\obj\Debug\net10.0\PersonalBlog.RazorAssemblyInfo.cache
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\obj\Debug\net10.0\PersonalBlog.RazorAssemblyInfo.cs
+C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\obj\Debug\net10.0\PersonalBlog.sourcelink.json
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\Fellipe\OneDrive\Desktop\Fellipe\PersonalBlog\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json

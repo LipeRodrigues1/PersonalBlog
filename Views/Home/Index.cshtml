@@ -1,8 +1,45 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<PersonalBlog.Models.Article>
+
+@{
+    ViewData["Title"] = "Personal Blog";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<a asp-controller="Article" 
+   asp-action="Create"
+   class="btn btn-success mb-3">
+   Create Article
+</a>
+
+<h1 class="text-center">Personal Blog</h1>
+<hr />
+
+@if (Model.Count == 0)
+{
+    <p>No articles yet.</p>
+}
+
+@foreach (var article in Model)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+
+            <h2>@article.Title</h2>
+
+            <p>@article.Content</p>
+
+            <small>
+                Published on: @article.CreatedAt.ToString("dd/MM/yyyy")
+            </small>
+
+            <br /><br />
+
+            <a asp-controller="Article"
+               asp-action="Details"
+               asp-route-id="@article.Id"
+               class="btn btn-primary">
+               Read More
+            </a>
+
+        </div>
+    </div>
+}

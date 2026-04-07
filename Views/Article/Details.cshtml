@@ -1,0 +1,15 @@
+@model PersonalBlog.Models.Article
+
+<h1>@Model.Title</h1>
+<hr />
+<p>
+    @Model.Content
+</p>
+
+<small>
+Published on: @Model.CreatedAt.ToString("dd/MM/yyyy")
+</small>
+
+<br /><br />
+
+<a href="/">Back to Home</a>

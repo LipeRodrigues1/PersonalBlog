@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
+using PersonalBlog.Models;
 
-namespace PersonalBlog;
+namespace PersonalBlog.Service;
 
 public class ArticleService
 {
@@ -15,7 +16,7 @@ public class ArticleService
 
         var json = File.ReadAllText(filePath);
 
-        if(string.IsNullOrEmpty(json))
+        if (string.IsNullOrEmpty(json))
         {
             return new List<Article>();
         }
@@ -25,7 +26,7 @@ public class ArticleService
 
     public void SaveArticles(List<Article> articles)
     {
-        var options =  new JsonSerializerOptions{WriteIndented = true};
+        var options = new JsonSerializerOptions { WriteIndented = true };
         var json = JsonSerializer.Serialize(articles, options);
         File.WriteAllText(filePath, json);
     }
@@ -33,10 +34,41 @@ public class ArticleService
     public void AddArticle(Article article)
     {
         var articles = GetArticles();
-        
+
         article.Id = articles.Count > 0 ? articles.Max(a => a.Id) + 1 : 1;
         article.CreatedAt = DateTime.Now;
         articles.Add(article);
+        SaveArticles(articles);
+    }
+
+    public Article GetById(int id)
+    {
+        return GetArticles().FirstOrDefault(a => a.Id == id);
+    }
+
+    public void UpdateArticle(Article updatedArticle)
+    {
+        var articles = GetArticles();
+        var article = articles.FirstOrDefault(a => a.Id == updatedArticle.Id);
+
+        if (article == null)
+        {
+            return;
+        }
+        article.Title = updatedArticle.Title;
+        article.Content = updatedArticle.Content;
+        SaveArticles(articles);
+    }
+    public void DeleteArticle(int id)
+    {
+        var articles = GetArticles();
+        var article = articles.FirstOrDefault(a => a.Id == id);
+        if(article == null)
+        {
+            return;
+        }
+
+        articles.Remove(article);
         SaveArticles(articles);
     }
 }
