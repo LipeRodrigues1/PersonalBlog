@@ -4,10 +4,8 @@
     ViewData["Title"] = "Personal Blog";
 }
 
-<a asp-controller="Article" 
-   asp-action="Create"
-   class="btn btn-success mb-3">
-   Create Article
+<a asp-controller="Article" asp-action="Create" class="btn btn-success mb-3">
+    Create Article
 </a>
 
 <h1 class="text-center">Personal Blog</h1>
@@ -33,11 +31,14 @@
 
             <br /><br />
 
-            <a asp-controller="Article"
-               asp-action="Details"
-               asp-route-id="@article.Id"
-               class="btn btn-primary">
-               Read More
+            <a asp-controller="Article" asp-action="Details" asp-route-id="@article.Id" class="btn btn-primary">
+                Read More
+            </a>
+            <a asp-controller="Article" asp-action="Edit" asp-route-id="@article.Id" class="btn btn-warning">
+                Edit
+            </a>
+            <a asp-controller="Article" asp-action="Delete" asp-route-id="@article.Id" class="btn btn-danger">
+                Delete
             </a>
 
         </div>

@@ -31,4 +31,20 @@ public class ArticleController : Controller
         return RedirectToAction("Index", "Home");
     }
 
+    public IActionResult Edit(int id)
+    {
+        var article = _articleService.GetById(id);
+        if (article == null)
+        {
+            return NotFound();
+        }
+        return View(article);
+    }
+    [HttpPost]
+    public IActionResult Edit(Article article)
+    {
+        _articleService.UpdateArticle(article);
+        return RedirectToAction("Index", "Home");
+    }
+
 }
