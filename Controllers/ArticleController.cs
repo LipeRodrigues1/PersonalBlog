@@ -47,4 +47,22 @@ public class ArticleController : Controller
         return RedirectToAction("Index", "Home");
     }
 
+    public IActionResult Delete(int id)
+    {
+        var article = _articleService.GetById(id);
+        if (article == null)
+        {
+            return NotFound();
+        }
+        return View(article);
+    }
+
+    [HttpPost]
+    [ActionName("Delete")]
+    public IActionResult DeleteConfirmed(int id)
+    {
+        _articleService.DeleteArticle(id);
+        return RedirectToAction("Index", "Home");
+    }
+
 }
